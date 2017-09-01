@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.dinner3000</groupId>
-	<artifactId>1-TwoSum</artifactId>
+	<artifactId>leetcode-solutions</artifactId>
 	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>1-TwoSum</name>
+	<name>leetcode-solutions</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -13,12 +13,12 @@
 		<org.springframework-version>4.3.10.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.8.10</org.aspectj-version>
 		<org.slf4j-version>1.7.25</org.slf4j-version>
-        <org.apache.cxf-version>3.1.12</org.apache.cxf-version>
-        <org.log4j-version>1.2.17</org.log4j-version>
+		<org.apache.cxf-version>3.1.12</org.apache.cxf-version>
+		<org.log4j-version>1.2.17</org.log4j-version>
 	</properties>
 
 	<build>
-		<finalName>1-TwoSum</finalName>
+		<finalName>leetcode-solutions</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -61,7 +61,18 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+		
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
