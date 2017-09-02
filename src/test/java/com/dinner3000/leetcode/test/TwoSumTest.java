@@ -1,11 +1,15 @@
 package com.dinner3000.leetcode.test;
 
+import java.util.Arrays;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.dinner3000.leetcode.solutions.TwoSum;
@@ -28,6 +32,8 @@ public class TwoSumTest extends BaseTest {
 	public void tearDown() throws Exception {
 	}
 
+	private Logger log = LoggerFactory.getLogger(getClass());
+	
 	@Autowired
 	private TwoSum twoSum;
 
@@ -36,7 +42,11 @@ public class TwoSumTest extends BaseTest {
 		int[] nums = new int[] {2,3,5};
 		int sum = 5;
 		
-		int[] result = twoSum.run(nums, sum);
+    	log.info("nums: {}", Arrays.toString(nums));
+    	log.info("target: {}", sum);
+		int[] result = twoSum.resolve(nums, sum);
+    	log.info("result: {}", Arrays.toString(result));
+    	
 		Assert.assertNotNull(result);
 		Assert.assertEquals(2, result.length);
 		Assert.assertTrue(result[0] < nums.length);

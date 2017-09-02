@@ -1,23 +1,42 @@
 package com.dinner3000.leetcode.solutions;
 
-import java.util.Arrays;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 @Service
 public class TwoSum {
 
-	private Logger log = LoggerFactory.getLogger(getClass());
-	
-    public int[] run(int[] nums, int target) {
-    	int[] result = new int[2];
-    	
-    	log.debug("nums: {}", Arrays.toString(nums));
-    	log.debug("target: {}", target);
-    	
-    	log.debug("result: {}", Arrays.toString(result));
-        return result;
+    public int[] resolve(int[] nums, int target) {
+    	return method1(nums, target);
+    }
+    
+    //O2
+    protected int[] method1(int[] nums, int target){
+    	int[] result = null;
+    	for(int i = 0; i < nums.length; i++){
+    		for(int j = 0; j < nums.length; j++){
+    			if (i == j) continue;
+    			if (nums[i] + nums[j] == target){
+    				result = new int[]{i, j};
+    				break;
+    			}
+    		}
+            if (result != null) break;
+    	}
+    	return result;
+    }
+    
+    //O2
+    protected int[] method2(int[] nums, int target){
+    	int[] result = null;
+    	for(int i = 0; i < nums.length; i++){
+    		for(int j = 0; j < nums.length; j++){
+    			if (i == j) continue;
+    			if (nums[i] + nums[j] == target){
+    				result = new int[]{i, j};
+    				break;
+    			}
+    		}
+    	}
+    	return result;
     }
 }
