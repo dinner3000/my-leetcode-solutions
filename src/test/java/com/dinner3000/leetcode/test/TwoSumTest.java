@@ -33,20 +33,20 @@ public class TwoSumTest extends BaseTest {
 	}
 
 	private Logger log = LoggerFactory.getLogger(getClass());
-	
+
 	@Autowired
 	private TwoSum twoSum;
 
 	@Test
 	public void testTwoSum() {
-		int[] nums = new int[] {2,3,5};
-		int sum = 5;
-		
-    	log.info("nums: {}", Arrays.toString(nums));
-    	log.info("target: {}", sum);
+		int[] nums = new int[] { -1, -2, -3, -4, -5 };
+		int sum = -8;
+
+		log.info("nums: {}", Arrays.toString(nums));
+		log.info("target: {}", sum);
 		int[] result = twoSum.resolve(nums, sum);
-    	log.info("result: {}", Arrays.toString(result));
-    	
+		log.info("result: {}", Arrays.toString(result));
+
 		Assert.assertNotNull(result);
 		Assert.assertEquals(2, result.length);
 		Assert.assertTrue(result[0] < nums.length);
