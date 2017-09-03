@@ -1,6 +1,8 @@
 package com.dinner3000.leetcode.solutions;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import org.slf4j.Logger;
@@ -27,6 +29,24 @@ public class LengthOfLongestSubstring {
 					set.remove(s.charAt(i));
 					i++;
 				}
+			}
+		}
+		return result;
+	}
+	
+	public int solution2(String s) {
+		int result = 0;
+
+		if (s.length() > 0) {
+			Map<Character, Integer> map = new HashMap<>();
+			int i = 0, j = 0;
+			while (j < s.length()) {
+				if (map.containsKey(s.charAt(j))) {
+                    i = Math.max(map.get(s.charAt(j)) + 1, i);
+				}
+                result = Math.max(result, j - i + 1);
+                map.put(s.charAt(j), j);
+                j++;
 			}
 		}
 		return result;

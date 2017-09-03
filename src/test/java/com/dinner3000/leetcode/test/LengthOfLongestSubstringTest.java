@@ -53,4 +53,21 @@ public class LengthOfLongestSubstringTest extends BaseTest{
 		Assert.assertEquals(3, result);
 	}
 
+	@Test
+	public void testSolution2() {
+		int result = 0;
+
+		result = problem.solution2("abcabcbb");
+		Assert.assertEquals(3, result);
+
+		result = problem.solution2("bbbbb");
+		Assert.assertEquals(1, result);
+
+		result = problem.solution2("pwwkew");
+		Assert.assertEquals(3, result);
+		
+		result = problem.solution2("abba");
+		Assert.assertEquals(2, result);
+	}
+
 }
