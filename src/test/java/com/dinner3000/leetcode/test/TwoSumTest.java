@@ -38,13 +38,30 @@ public class TwoSumTest extends BaseTest {
 	private TwoSum twoSum;
 
 	@Test
-	public void testTwoSum() {
+	public void testSolution1() {
 		int[] nums = new int[] { -1, -2, -3, -4, -5 };
 		int sum = -8;
 
 		log.info("nums: {}", Arrays.toString(nums));
 		log.info("target: {}", sum);
-		int[] result = twoSum.resolve(nums, sum);
+		int[] result = twoSum.solution1(nums, sum);
+		log.info("result: {}", Arrays.toString(result));
+
+		Assert.assertNotNull(result);
+		Assert.assertEquals(2, result.length);
+		Assert.assertTrue(result[0] < nums.length);
+		Assert.assertTrue(result[1] < nums.length);
+		Assert.assertEquals(sum, nums[result[0]] + nums[result[1]]);
+	}
+
+	@Test
+	public void testSolution2() {
+		int[] nums = new int[] { -1, -2, -3, -4, -5 };
+		int sum = -8;
+
+		log.info("nums: {}", Arrays.toString(nums));
+		log.info("target: {}", sum);
+		int[] result = twoSum.solution2(nums, sum);
 		log.info("result: {}", Arrays.toString(result));
 
 		Assert.assertNotNull(result);
