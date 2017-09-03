@@ -1,9 +1,5 @@
 package com.dinner3000.leetcode.test;
 
-import static org.junit.Assert.*;
-
-import java.util.Arrays;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
